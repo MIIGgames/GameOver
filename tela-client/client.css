@@ -1,0 +1,334 @@
+* {
+    margin: 0px;
+    /*Distancia entre os itens*/
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  nav {
+    display: flex;
+    /*Jogar os itens para o canto da página*/
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    /*Mudando a cor de fundo do menu*/
+    background-color: #2f2841;
+    box-shadow: 0px -10px 40px #00000056;
+    /*Fonte do menu*/
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .logo {
+    /*Mudando a cor da fonte do nome*/
+    color: white;
+    /*Deixando o texto formatado*/
+    text-transform: uppercase;
+    /*Mudando o espaçamento das letras*/
+    letter-spacing: 5px;
+    /*Tamaho da letra*/
+    font-size: 20px;
+
+  }
+
+  .nav-links {
+    /*Ajustando o tamanho e posição dos itens*/
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+
+  }
+
+  .nav-links li {
+    /*Sumindo com os pontos que ficavam nos itens*/
+    list-style: none;
+
+
+  }
+
+  .nav-links a {
+    /*Mudando a cor dos itens*/
+    color: white;
+    /*Mudando o espaçamento das letras dos itens*/
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .burger {
+    /*Não deixando o menu hambuguer visivel */
+    display: none;
+    /*aparecendo a maozinha quando clica no menu hambuguer*/
+    cursor: pointer;
+  }
+
+  .burger div {
+    /*Ajeitando o menu Hambuguer*/
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+
+  /*Ajustando a altura*/
+  @media screen and (max-width:1024px) {
+    .nav-links {
+      width: 60%;
+    }
+  }
+
+  /*Ajustando a altura minima*/
+  @media screen and (max-width:768px) {
+    body {
+      overflow-x: hidden;
+    }
+
+    /*ajustando os itens para se adequar a altura min.*/
+    .nav-links {
+      position: absolute;
+      right: 0px;
+      height: 80vh;
+      top: 8vh;
+      /*Arrumando o menu hambuguer*/
+      background-color: #2f2841;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      /*Ajeitando a transição parar abrir o menu hambuguer*/
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li {
+      opacity: 0;
+    }
+
+    .burger {
+      /*para aparecer o menu hambuguer quando a tela tiver pequena*/
+      display: block;
+    }
+  }
+
+  /*Quando se clica no menu hambuguer, consegue abrir os itens*/
+  .nav-active {
+    transform: translateX(0%);
+  }
+
+  /*Animações quando se clica no menu hamburguer*/
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  /*Transformando o menu em X*/
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .toggle .line2 {
+    opacity: 0;
+
+  }
+
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .nav-links.nav-active li {
+      opacity: 1;
+    }
+  }
+
+
+body {
+    background-color: #201b2c;
+}
+
+.parte-logo {
+    background: url(../tela-client/imagmes-tela-cliente/pexels-lucie-liz-3165335.jpg) no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+}
+
+/*Parte da Animaçao*/
+
+.animation {
+    text-align: center;
+    line-height: 500px;
+    color: aqua;
+}
+
+.animation::after {
+    content: "|";
+    margin-left: 5px;
+    display: inline-block;
+    animation: blink .7s infinite;
+}
+
+/*div-game*/
+
+.div-dos-games {
+    height: 100%;
+    max-width: 1000px;
+    min-width: 420px;
+    text-align: center;
+    margin: auto;
+    display: inline-flex;
+}
+
+.div-game:hover {
+    transform: translateX(5px) scale(1.0);
+}
+
+.div-game {
+    transition: transform 1s;
+    transform:  translateX(7px) scale(0.90);
+    text-align: center;
+    background-color: #2f2841;
+    height: 50vh;
+    width: 30vw;
+    border-radius: 8px;
+    margin: 5px 2px;
+    margin-right: 5px 5px;
+}
+
+.div-game p {
+    padding: 10px;
+    background-color: black;
+    color: aqua;
+    text-align: center;
+}
+
+.div-game img, a {
+  text-align: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/*Main*/
+
+main {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 1100px;
+    min-width: 420px;
+    padding: 20px;
+    margin-bottom: 30px;
+    margin: auto;
+}
+
+main h1 {
+    margin: 10px 0px;
+    color: aqua;
+}
+
+main p {
+    color: white;
+}
+
+.artigo {
+    margin: 50px 0px;
+}
+
+/*animação*/
+
+[data-anime] {
+  opacity: 0;
+  transition: .2s;
+}
+
+[data-anime="left"] {
+  transform: translate3d(-50px, 0, 0);
+}
+
+[data-anime="right"] {
+  transform: translate3d(50px, 0, 0);
+}
+
+[data-anime="top"] {
+  transform: translate3d(0, -50px, 0);
+}
+
+[data-anime].animate {
+  opacity: 1;
+  transform: translate3d(0px, 0px, 0px);
+}
+
+/*Trailer call of duty*/
+
+.call-off-duty {
+  background-color: #201b2c;
+  margin: 0px -20px 20px -20px;
+  margin: 0px -20px 20px;
+  padding: 15px;
+  padding-bottom: 58%;
+  position: relative;
+}
+
+.call-off-duty > iframe {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+}
+
+/*Comunidade*/
+
+.container {
+  margin: auto;
+}
+
+.comunidade {
+  padding: 5px;
+  
+}
+
+.comunidade > ul {
+  margin: 0px 50px;
+  padding: 5px;
+}
+
+.comunidade li, a{
+  padding: 5px;
+  color: blue;
+  text-decoration: none;
+  font-size: 1.1em;
+  margin-right: auto;
+}
+
+footer {
+  background-color: black;
+  border-radius: 10px 10px;
+  height: 30vh;
+}
+
+.container-footer {
+  display: inline-block;
+}
+
+.contato {
+  color: white;
+  margin: 30px 80px;
+}
+
+.contato p, h2{
+  color: white;
+  padding: 5px;
+}
